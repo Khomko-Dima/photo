@@ -1,10 +1,10 @@
 // USER VARIABLES SECTION
 
-$accent: orange // Accent Color
+$accent: #000000 // Accent Color
 $fontsize: 16px // Body Font Size
 $textcolor: #333 // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
-$roboto: Roboto, sans-serif // Roboto Font Family
+$roboto: Raleway, sans-serif // Raleway Font Family
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 20px
@@ -14,7 +14,8 @@ $gutter: $grid-gutter-width
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import "../libs/css/FontAwesome_all.min.css" // FontAwesome file css
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
 
 // FONTS LOAD SECTION
@@ -24,13 +25,28 @@ $gutter: $grid-gutter-width
 		font-family: $fname
 		font-style: $fstyle
 		font-weight: $fweight
-		// font-display: swap // Uncomment to initially display system fonts
+		font-display: swap // Uncomment to initially display system fonts
 		src: local($fname), url($furl) format('woff2')
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('Raleway', normal, 500, '../fonts/Raleway-Medium.woff2')
+@include font('Raleway', normal, 400, '../fonts/Raleway-Regular.woff2')
+
+
+@include font('Font Awesome 5 Brands', normal, 400, '../fonts/fa-brands-400.woff2')
+@include font('Font Awesome 5 Free', normal, 400, '../fonts/fa-regular-400.woff2')
+@include font('Font Awesome 5 Free', normal, 400, '../fonts/fa-solid-900.woff2')
+
+// FONTS LOAD SECTION
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin; 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
 
 // GENERAL DOCUMENT STYLES
 
