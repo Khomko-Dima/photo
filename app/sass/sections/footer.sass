@@ -1,0 +1,45 @@
+.footer
+	padding-top: 50px
+	padding-bottom: 50px
+	position: relative
+	z-index: 50
+	background-color: #fff
+	&-index
+		margin-top: 150px
+		font-size: 18px
+		a 
+			text-decoration: none
+			color: $accent
+			transition: 0.3s ease all
+			&:hover
+				color: rgba($accent, 0.4)
+	&-phone,
+	&-social,
+	&-email
+		display: flex
+		justify-content: center
+		align-items: center
+	&-social a
+		margin-right: 15px
+		font-size: 30px
+		&:last-child
+			margin-right: 0
+	&-phone,
+	&-email
+		a 
+			margin-left: 10px
+	&-politic
+		box-sizing: border-box
+		border-top: 1px solid rgba($accent, 0.2)
+		margin-top: 15px
+		padding-top: 10px
+		font-size: 14px
+		text-align: center
+//Medium: ≥768px
++media-breakpoint-down(md)
+	.footer
+		&-phone,
+		&-social,
+		&-email
+			flex-wrap: wrap
+

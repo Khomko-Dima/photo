@@ -1,0 +1,68 @@
+header 
+	position: relative
+	width: 100%
+	overflow: hidden
+	padding-top: 30px
+	padding-bottom: 30px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-left: 50px
+	padding-right: 50px
+	z-index: 10
+	.logo
+		background-color: #fff
+		padding: 15px
+		position: relative
+.header
+	&-open,
+	&-close
+		position: fixed
+		top: 36px
+		right: 50px
+		width: 50px
+		height: 50px
+		text-align: center
+		background-color: $accent
+		display: flex
+		justify-content: center
+		align-items: center
+		i 
+			color: #fff
+			font-size: 30px
+			transition: 0.3s ease font-size
+		&:hover 
+			i 
+				font-size: 35px
+	&-open
+ 		display: flex
+	&-close
+		display: none
+
+//Extra large: ≥1200px
++media-breakpoint-down(xl)
+
+//Large: ≥992px
++media-breakpoint-down(lg)
+
+//Medium: ≥768px
++media-breakpoint-down(md)
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	header 
+		padding-top: 15px
+		padding-left: 15px
+	.header
+		&-open,
+		&-close
+			top: 21px
+			right: 15px
+
+//Extra small: >0
++media-breakpoint-down(xs)
+	header 
+		.logo
+			width: 200px
+			img 
+				width: 100%

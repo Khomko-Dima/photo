@@ -28,6 +28,7 @@ $gutter: $grid-gutter-width
 		font-display: swap // Uncomment to initially display system fonts
 		src: local($fname), url($furl) format('woff2')
 
+@include font('Raleway', normal, 900, '../fonts/Raleway-ExtraBold.woff2')
 @include font('Raleway', normal, 500, '../fonts/Raleway-Medium.woff2')
 @include font('Raleway', normal, 400, '../fonts/Raleway-Regular.woff2')
 
@@ -72,3 +73,10 @@ body
 	line-height: 1.65
 	overflow-x: hidden
 	color: $textcolor
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+section 
+	overflow: hidden

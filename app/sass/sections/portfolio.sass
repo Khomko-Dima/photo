@@ -1,0 +1,100 @@
+.portfolio
+	padding-top: 50px
+	&-container
+		overflow: hidden
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+		grid-template-rows: repeat(3, 100px)
+		grid-gap: 20px
+		grid-template-areas: "first  second  third" "first  second  third" "fourth  second  six" "fourth fifth six"
+		.grid1
+			grid-area: first
+		.grid2
+			grid-area: second
+		.grid3
+			grid-area: third
+		.grid4
+			grid-area: fourth
+		.grid5
+			grid-area: fifth
+		.grid6
+			grid-area: six
+		&__item
+			position: relative
+			overflow: hidden
+			a 
+				width: 100%
+				height: 100%
+				display: block
+				position: relative
+				overflow: hidden
+				text-decoration: none
+				img 
+					width: 100%
+					height: 100%
+					object-fit: cover
+					position: relative
+					transition: 0.3s ease all
+				&:after 
+					content: ''
+					position: absolute
+					z-index: 2
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					width: 100%
+					height: 100%
+					transition: 0.3s ease all
+					background-color: rgba(255, 255, 255, 0)
+				.info_item 
+					display: flex
+					opacity: 0
+					transition: 0.5s ease opacity
+					position: absolute
+					z-index: 3
+					top: 30%
+					left: 0
+					flex-direction: column
+					transform: translayteY(-30%)
+					padding-left: 15px
+					.title
+						color: $accent
+						font-size: 23px
+						text-transform: uppercase
+						font-weight: 900
+						margin: 0
+					.desc
+						color: $textcolor
+						font-size: 16px
+						font-weight: 400
+					.title,
+					.desc
+						text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.32)
+				&:hover
+					img 
+						filter: blur(3px)
+					.info_item
+						opacity: 1
+					&:after
+						background-color: rgba(255, 255, 255, 0.4)
+
+
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.portfolio
+		&-container
+			grid-template-columns: 1fr 1fr 1fr
+			grid-template-areas: "first  second  third" "first  second  third" "fourth  fifth  six" "fourth fifth six"
+			&__item a .info_item 
+				.title
+					font-size: 18px
+				.desc 
+					font-size: 14px
+//Small: ≥576px
++media-breakpoint-down(sm)	
+	.portfolio
+		&-container
+			grid-template-columns: 1fr 1fr
+			grid-template-rows: 1fr 1fr 1fr 1fr
+			grid-template-areas: "first second" "third second" "fourth fifth" "fourth six"

@@ -1,0 +1,22 @@
+.info
+	position: relative
+	margin-top: 30%
+	&-content
+		width: 100%
+		background-color: rgba(255, 255, 255, 0.9)
+		padding: 15px
+		h1,h2 
+			font-size: 43px
+			text-transform: uppercase
+			font-weight: 900
+			line-height: 70px
+			margin: 0
+			color: $accent
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.info
+		&-content
+			h1,h2 
+				font-size: 30px
+				line-height: 40px
