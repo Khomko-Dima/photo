@@ -30,14 +30,22 @@ header
 		i 
 			color: #fff
 			font-size: 30px
+			line-height: 50px
+			width: 100%
+			height: 100%
 			transition: 0.3s ease font-size
+			cursor: pointer
 		&:hover 
 			i 
 				font-size: 35px
 	&-open
- 		display: flex
+ 		display: none
+ 		&.active
+ 			display: flex
 	&-close
 		display: none
+		&.active
+			display: flex
 	&-line
 		.logo
 			border-bottom: 1px solid rgba($accent, 0.2)
