@@ -1,0 +1,24 @@
+.button
+	display: inline-block
+	border: none
+	color: $accent
+	text-decoration: none
+	background-color: #f2f2f2
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&:focus, &:hover
+		text-decoration: none
+		color: $accent
+	&:hover
+		background-color: darken(#f2f2f2, 2%)
+	&:active
+		background-color: darken(#f2f2f2, 5%)

@@ -1,0 +1,58 @@
+.form
+	box-shadow: 0 0 43px rgba(0, 0, 0, 0.08)
+	border-radius: 5px
+	background-color: #ffffff
+	padding: 5px 
+	width: 410px
+	border-radius: 5px
+	padding: 15px
+	display: flex
+	// flex-direction: column
+	span 
+		font-size: 15px
+		font-weight: 500
+		line-height: 22px
+	&-button 		
+.form-control 
+	margin-top: 15px
+	position: relative
+	padding-top: 1.5rem
+	label 
+		position: absolute
+		top: -12px
+		left: 15px
+		font-size: 14px
+		opacity: 1
+		transform: translateY(0)
+		transition: all 0.2s ease-out
+	input:placeholder-shown + label 
+		opacity: 0
+		transform: translateY(1rem)
+	input, textarea, select
+		outline: none
+		&:focus:required:invalid
+			border-color: $accent
+	input[type="text"],
+	select,
+	textarea
+		width: 100%
+		height: 30px
+		padding: 15px
+		padding-top: 25px
+		padding-bottom: 25px
+		font-size: 14px
+		font-weight: 500
+		line-height: 19px
+		border-radius: 5px
+		color: $textcolor
+		box-sizing: border-box
+		border: none
+		background-color: #f2f2f2
+	select
+		padding: 15px
+		appearance: none
+	input[type="text"]::placeholder
+		color: #898989  
+	input
+		&:placeholder
+			text-transform: uppercase

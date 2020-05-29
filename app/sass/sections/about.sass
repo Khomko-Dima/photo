@@ -1,0 +1,35 @@
+.about
+	padding-top: 150px
+	&-title
+		font-size: 40px
+		text-transform: uppercase
+		font-weight: 900
+		line-height: 70px
+		text-align: right
+		margin: 0
+		padding-bottom: 50px
+	&-img
+		h3 
+			font-size: 30px
+			font-weight: 500
+			line-height: 70px
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.about
+		padding-top: 100px
+		&-title
+			font-size: 28px
+			line-height: 38px
+		&-img
+			h3 
+				font-size: 20px
+				font-weight: 500
+				line-height: 30px
+//Extra small: >0
++media-breakpoint-down(xs)
+	.about
+		padding-top: 80px
+		&-img
+			h3 
+				text-align: center
