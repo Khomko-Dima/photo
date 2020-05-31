@@ -1,8 +1,16 @@
 .ideas
-	padding-top: 80px
+	padding-top: 50px
+	padding-bottom: 50px
+	position: relative
+	background-color: #fff
 	&-list 
 		.col-lg-10	
 			margin-bottom: 20px
+	#wishlist 
+		cursor: pointer
+		font-size: 25px
+		i 
+			color: tomato
 .category 
 	&-title
 		font-size: 30px
@@ -89,7 +97,8 @@
 
 .img-wrapper
 	padding-top: 30px
-
+	.col-lg-4 
+		margin-bottom: 30px
 .card
 	position: relative
 	&:after 
@@ -110,7 +119,7 @@
 		right: 1px
 		height: 50px
 		width: 50px
-		color: #fff
+		color: rgba(255, 99, 71, 0.7)
 		z-index: 3
 		overflow: hidden
 		cursor: pointer
@@ -118,6 +127,7 @@
 		border: 1px solid grey
 		box-sizing: border-box
 		border-radius: 50%
+		cursor: pointer
 		&:after 
 			position: absolute
 			z-index: 2
@@ -147,7 +157,8 @@
 		transition: 0.4s ease-in all
 		span 
 			display: block
-			font-size: 18px
+			font-size: 20px
+			font-weight: 500
 .card
 	&:hover
 		&:after 

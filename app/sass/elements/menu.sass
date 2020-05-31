@@ -1,30 +1,83 @@
-.opacity-nav
-	position: fixed
-	display: none
-	width: 100%
-	min-height: 100%
-	top: 0
-	z-index: 9
-	background: #ffffff
-	&.active
-		display: block
-		display: flex
-		justify-content: center
-		align-items: center
 .menu 
 	ul 
 		margin: 0
 		padding: 0
 		list-style: none
+		display: flex
+		flex-wrap: wrap
 		li 
-			font-size: 35px
-			text-align: center
-			line-height: 70px
-			font-weight: 500
+			margin-right: 15px
+			padding: 10px
+			position: relative
+			display: block
+			&:first-child
+				padding-left: 0
+				a 
+					padding-left: 0
+			&:last-child
+				margin-right: 0
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				background-color: $accent
+				height: 2px
+				width: 0
+				transition: 0.5s ease all
+			&:before
+				left: 0
+			&:after
+				right: 0
+			&:hover
+				&:before,
+				&:after
+					width: 50%
 			a 
-				color: #999999
+				cursor: pointer
 				text-decoration: none
-				transition: 0.3s ease all
-				&:hover 
-					color: $accent
+				color: #111
+				font-size: 22px
+				font-weight: 500
+				padding: 10px
+				white-space: nowrap
+				&.active
+					text-decoration: underline
 
+
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.menu
+		position: fixed
+		margin-top: 0
+		top: -100%
+		left: 0
+		right: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 5
+		background-color: #fff
+		display: none
+		overflow: hidden
+		overflow-y: scroll
+		animation-name: shoy
+		animation-duration: 0.5s
+		ul 
+			flex-direction: column
+			margin-top: 50px
+			li 
+				border-bottom: 1px solid rgba(76, 76, 76, 0.2)
+				width: 100%
+				margin-right: 0
+				padding-top: 15px
+				padding-bottom: 15px
+				a 
+					font-size: 18px
+					padding-top: 15px
+					padding-bottom: 15px
+					color: $textcolor
+		&.active
+			display: block
+			text-align: center
+			top: 0

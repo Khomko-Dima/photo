@@ -266,13 +266,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
     //иницилизация
-    storageQuery(true);
-    categoryList.addEventListener('click', choiceCategory);
-    locationList.addEventListener('click', choiceLocationList);
-    typeLocationList.addEventListener('click', choiceTypeLocationList);
-    seasonList.addEventListener('click', choiceSeasonList);
-    wishlistBtn.addEventListener('click', showWishlist);
-    imgWrapper.addEventListener('click', handlerBasket);
+    try{
+        storageQuery(true);
+        categoryList.addEventListener('click', choiceCategory);
+        locationList.addEventListener('click', choiceLocationList);
+        typeLocationList.addEventListener('click', choiceTypeLocationList);
+        seasonList.addEventListener('click', choiceSeasonList);
+        wishlistBtn.addEventListener('click', showWishlist);
+        imgWrapper.addEventListener('click', handlerBasket);
+    } catch(e) {
+        console.log(e);
+    }
+    
 
     
 });

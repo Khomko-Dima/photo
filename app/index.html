@@ -23,7 +23,7 @@
 			</div>
 		</div>
 	</div> -->
-
+<div class="navBurger" role="navigation" id="navToggle"></div>
 <header class="header">
 	<div class="logo img-responsive">
 		<a href="index.html">
@@ -31,52 +31,60 @@
 		</a>
 	</div>
 
-	<div class="header-open active">
-		<i class="fa fa-bars open-menu"></i>
-	</div>
-	<div class="header-close">
-		<i class="fas fa-times close-menu"></i>
-	</div>
+	<nav class="menu"> <!-- actvie -->
+		<ul class="info-header">
+			<li>
+				<a class="info-header-tab active">Портфолио</a>
+			</li>
+			<li>
+				<a class="info-header-tab">Обо мне</a>
+			</li>
+			<li>
+				<a class="info-header-tab">Цены</a>
+			</li>
+			<li>
+				<a class="info-header-tab">Идеи для съемок</a>
+			</li>
+			<li>
+				<a class="info-header-tab review-show">Отзывы</a>
+			</li>
+			<li>
+				<a class="info-header-tab">Контакты</a>
+			</li>
+		</ul>
+	</nav>
+
 </header>
 
-<!--Menu-->
 
-	<div class="opacity-nav"><!-- active -->
-		<nav class="menu">
-			<ul>
-				<li><a href="index.html">Портфолио</a></li>
-				<li><a href="about.html">Обо мне</a></li>
-				<li><a href="price.html">Цены</a></li>
-				<li><a href="feedback.html">Отзывы</a></li>
-				<li><a href="contact.html">Контакты</a></li>
-			</ul>
-		</nav>
-	</div>
+
+<ul class="slideshow">
+	<li><span>Image 01</span></li>
+	<li><span>Image 02</span></li>
+	<li><span>Image 03</span></li>
+	<li><span>Image 04</span></li>
+	<li><span>Image 05</span></li>
+	<li><span>Image 06</span></li>
+</ul>
 
 <main>
-	<ul class="slideshow">
-		<li><span>Image 01</span></li>
-		<li><span>Image 02</span></li>
-		<li><span>Image 03</span></li>
-		<li><span>Image 04</span></li>
-		<li><span>Image 05</span></li>
-		<li><span>Image 06</span></li>
-	</ul>
-	<section class="info">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="info-content">
-						<h1>ЛЕНА ПРАВДИК</h1>
-						<h2 class="typewrite">Фотограф <span>Беларусь</span></h2>
-						<span>Тут будет текст что-то типа посмотри мое портфолио, мой подход к каждому индивидуален и все в этом духе.</span> 
+	
+	<section class="portfolio info-tabcontent">
+
+		<div class="info">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="info-content">
+							<h1>ЛЕНА ПРАВДИК</h1>
+							<h2 class="typewrite">Фотограф <span>Беларусь</span></h2>
+							<span>Тут будет текст что-то типа посмотри мое портфолио, мой подход к каждому индивидуален и все в этом духе.</span> 
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
 
-	<section class="portfolio">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -140,6 +148,405 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="about info-tabcontent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="about-title title-h2">
+						<h2>НЕМНОГО ОБО МНЕ</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-5 col-sm-5 col-8">
+					<div class="about-img">
+						<img src="images/dest/i.jpg" alt="Lena Pravdik" class="img-responsive">
+						<h3>Lena Pravdik</h3>
+					</div>
+				</div>
+				<div class="col-md-7 col-sm-7 col-12">
+					<div class="about-text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione praesentium sed hic obcaecati minus reprehenderit quibusdam eveniet, porro odit fugiat possimus earum qui cum, totam fugit? Fugit sapiente totam iure eligendi blanditiis, nesciunt sunt nemo voluptatem at temporibus quaerat dolorum voluptates architecto. Doloribus tempore ex natus quaerat architecto nemo ullam blanditiis perferendis officia animi itaque, aliquid dolorem dicta laborum ipsum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="price info-tabcontent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="price-title title-h2">
+						<h2>цены</h2>
+					</div>
+					<div class="price-description">
+						Если набор представленных услуг вам не соответствует, пишите — все ваши пожелания обсудим индивидуально.
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center justify-content-md-around price-list">
+				<div class="col-lg-4 col-md-5 col-sm-6 col-10">
+					<div class="price-card">
+						<div class="front">
+							<div class="front-img">
+								<img src="images/dest/price/1.jpg" class="img-responsive" alt="">
+							</div>
+							<div class="front-title">
+								Портретная съёмка
+							</div>
+							<div class="front-cost">40$</div>
+							<div class="front-button button">Подробнее</div>
+						</div>
+						<div class="back">
+							<div class="back-list">
+								<ul>
+									<li>— 1 час съемки</li>
+									<li>— 30 обработанных фотографий с профессиональной ретушью</li>
+									<li>— Все удачные кадры с цветокоррекцией</li>
+								</ul>
+							</div>
+							<div class="back-button button">Заказать</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-5 col-sm-6 col-10">
+					<div class="price-card">
+						<div class="front">
+							<div class="front-img">
+								<img src="images/dest/price/2.jpg" class="img-responsive" alt="">
+							</div>
+							<div class="front-title">
+								Свадебная фотография
+							</div>
+							<div class="front-cost">40$</div>
+							<div class="front-button button">Подробнее</div>
+						</div>
+						<div class="back">
+							<div class="back-list">
+								<ul>
+									<li>— 1 час съемки</li>
+									<li>— 30 обработанных фотографий с профессиональной ретушью</li>
+									<li>— Все удачные кадры с цветокоррекцией</li>
+								</ul>
+							</div>
+							<div class="back-button button">Заказать</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-5 col-sm-6 col-10">
+					<div class="price-card">
+						<div class="front">
+							<div class="front-img">
+								<img src="images/dest/price/3.jpg" class="img-responsive" alt="">
+							</div>
+							<div class="front-title">
+								Love Story
+							</div>
+							<div class="front-cost">40$</div>
+							<div class="front-button button">Подробнее</div>
+						</div>
+						<div class="back">
+							<div class="back-list">
+								<ul>
+									<li>— 1 час съемки</li>
+									<li>— 30 обработанных фотографий с профессиональной ретушью</li>
+									<li>— Все удачные кадры с цветокоррекцией</li>
+								</ul>
+							</div>
+							<div class="back-button button">Заказать</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-5 col-sm-6 col-10">
+					<div class="price-card">
+						<div class="front">
+							<div class="front-img">
+								<img src="images/dest/price/1.jpg" class="img-responsive" alt="">
+							</div>
+							<div class="front-title">
+								Портретная съёмка
+							</div>
+							<div class="front-cost">40$</div>
+							<div class="front-button button">Подробнее</div>
+						</div>
+						<div class="back">
+							<div class="back-list">
+								<ul>
+									<li>— 1 час съемки</li>
+									<li>— 30 обработанных фотографий с профессиональной ретушью</li>
+									<li>— Все удачные кадры с цветокоррекцией</li>
+								</ul>
+							</div>
+							<div class="back-button button">Заказать</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-5 col-sm-6 col-10">
+					<div class="price-card">
+						<div class="front">
+							<div class="front-img">
+								<img src="images/dest/price/2.jpg" class="img-responsive" alt="">
+							</div>
+							<div class="front-title">
+								Свадебная фотография
+							</div>
+							<div class="front-cost">40$</div>
+							<div class="front-button button">Подробнее</div>
+						</div>
+						<div class="back">
+							<div class="back-list">
+								<ul>
+									<li>— 1 час съемки</li>
+									<li>— 30 обработанных фотографий с профессиональной ретушью</li>
+									<li>— Все удачные кадры с цветокоррекцией</li>
+								</ul>
+							</div>
+							<div class="back-button button">Заказать</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-5 col-sm-6 col-10">
+					<div class="price-card">
+						<div class="front">
+							<div class="front-img">
+								<img src="images/dest/price/3.jpg" class="img-responsive" alt="">
+							</div>
+							<div class="front-title">
+								Love Story
+							</div>
+							<div class="front-cost">40$</div>
+							<div class="front-button button">Подробнее</div>
+						</div>
+						<div class="back">
+							<div class="back-list">
+								<ul>
+									<li>— 1 час съемки</li>
+									<li>— 30 обработанных фотографий с профессиональной ретушью</li>
+									<li>— Все удачные кадры с цветокоррекцией</li>
+								</ul>
+							</div>
+							<div class="back-button button">Заказать</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ideas info-tabcontent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="ideas-title title-h2">
+						<h2>ГЕНЕРАЦИЯ ИДЕЙ</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row ideas-list">
+				<div class="col-lg-10 order-lg-1 order-2">
+					<div class="category">
+						<div class="category-title">
+							<h5>Категории</h5>
+						</div>
+						<ul class="category-list">
+							<li>
+								<a href="#" class="category-item category-item__1" data-category="Женский портрет">Женский портрет</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__2" data-category="Мужской портрет">Мужской портрет</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__3" data-category="Love Story">Love Story</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__4" data-category="Свадебная">Свадебная</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__5" data-category="Семейная">Семейная</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 order-lg-2 order-1">
+					<div id="wishlist"><i class="fas fa-heart"></i> Избранное</div>
+				</div>
+				<div class="col-lg-3 order-3">
+					<div class="location shoy">
+						<div class="location-title">
+							<h5>Выберите местногсть</h5>
+						</div>
+						<ul class="location-list">
+							<li>
+								<a href="#" class="category-item category-item__1" data-category="Уличная">Уличная</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__2" data-category="Студийная">Студийная</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 order-3">
+					<div class="typeLocation shoy">
+						<div class="typeLocation-title">
+							<h5>Выберите локацию</h5>
+						</div>
+						<ul class="typeLocation-list">
+							<li>
+								<a href="#" class="category-item category-item__1" data-category="Городская фотосессия">Городская фотосессия</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__2" data-category="На природе">На природе</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-5 order-3">
+					<div class="season shoy">
+						<div class="season-title">
+							<h5>Выберите время года</h5>
+						</div>
+						<ul class="season-list">
+							<li>
+								<a href="#" class="category-item category-item__1" data-category="Лето">Лето</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__2" data-category="Осень">Осень</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__2" data-category="Зима">Зима</a>
+							</li>
+							<li>
+								<a href="#" class="category-item category-item__2" data-category="Весна">Весна</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row img-wrapper justify-content-center">
+				<!-- КАРТОЧКИ -->
+				<!-- <div class="card-wrapper col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img">
+                            <img class="img-responsive" src="images/dest/portfolio/1.jpg" alt="undefined">
+                            <div class="card-wishlist"></div>
+                        </div>
+                        <div class="card-desc">
+                        	<span>Категории: Женский портрет, Мужской портрет, Love Story, Свадебная, Семейная</span>
+                        	<span>Локация: Студийная</span>
+                        	<span>Сезон: Лето, Осень, Зима, Весна</span>
+                        </div>
+                    </div>
+                </div> -->
+				<!-- END КАРТОЧКИ -->
+
+			</div>
+		</div>
+	</section>
+
+	<section class="review info-tabcontent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="review-title title-h2">
+						<h2>отзывы</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="review-list">
+						<div class="review-list__item" id="init_slick">
+							<div class="img">
+								<img src="images/dest/portfolio/4.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="name">София</div>
+							<div class="text">Леночка, я от всей души благодарю тебя Для меня ты самый лучший фотограф </div>
+						</div>
+						<div class="review-list__item">
+							<div class="img">
+								<img src="images/dest/portfolio/4.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="name">София</div>
+							<div class="text">еночка, я от всей души благодарю тебя Для меня ты самый лучший фотограф </div>
+						</div>
+						<div class="review-list__item">
+							<div class="img">
+								<img src="images/dest/portfolio/4.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="name">София</div>
+							<div class="text">еночка, я от всей души благодарю тебя Для меня ты самый лучший фотограф </div>
+						</div>
+						<div class="review-list__item">
+							<div class="img">
+								<img src="images/dest/portfolio/4.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="name">София</div>
+							<div class="text">еночка, я от всей души благодарю тебя Для меня ты самый лучший фотограф </div>
+						</div>
+						<div class="review-list__item">
+							<div class="img">
+								<img src="images/dest/portfolio/4.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="name">София</div>
+							<div class="text">еночка, я от всей души благодарю тебя Для меня ты самый лучший фотограф </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact info-tabcontent">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="contact-title title-h2">
+						<h2>ОБРАТНАЯ СВЯЗЬ</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="contact-text">
+						<p>
+							Напишите мне с помощью данной формы и я отвечу на ваш e-mail. Или вы можете связаться со мной любым другим удобным для вас способом:<br/>
+							написать сообщение в
+							<a href="https://t.me/pravdik"><i class="fab fa-telegram-plane"></i> Telegram</a>, в соцсетях —
+							<a href="https://www.instagram.com/ph_lena_/"><i class="fab fa-instagram"></i> Instagram</a>,
+							<a href="https://vk.com/im?media=&sel=-80111566"><i class="fab fa-telegram-plane"></i> vk.com</a> или позвонить по телефону — <a href="tel:+375291757061"><i class="fas fa-mobile-alt"></i> +375 (29) 1757061.</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<form action="#" class="form contact-form">
+						<div class="form-control">
+							<input id="name" name="name" type="text" placeholder="Ваше имя" required>
+							<label for="name">Ваше имя</label>
+						</div>
+						<div class="form-control">
+							<input id="tel" name="email" type="text" placeholder="Ваш E-mail" required>
+							<label for="email">Ваш E-mail</label>
+						</div>
+						<div class="form-control">
+							<textarea id="message" name="message" placeholder="Ваше сообщение" required></textarea>
+						</div>
+						<div class="form-control form-control__button">
+							<input class="button form-button" type="submit" value="Отправить">
+						</div>
+						<input class="input" name="valToSend" value="Форма обратной связи" type="hidden">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
 </main>
 
 	
@@ -175,6 +582,7 @@
 		</div>
 	</div>
 </footer>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="js/app.min.js"></script>
 
 </body>

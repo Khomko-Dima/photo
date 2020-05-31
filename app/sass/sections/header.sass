@@ -1,75 +1,85 @@
-header 
+.header
 	position: relative
 	width: 100%
 	overflow: hidden
-	padding-top: 30px
-	padding-bottom: 30px
+	padding-top: 20px
+	padding-bottom: 20px
 	display: flex
 	justify-content: space-between
-	align-items: center
+	align-items: stretch
 	padding-left: 50px
 	padding-right: 50px
-	z-index: 10
+	z-index: 1
+	background-color: #fff
 	.logo
 		background-color: #fff
 		padding: 15px
 		position: relative
-.header
-	&-open,
-	&-close
-		position: fixed
-		top: 36px
-		right: 50px
-		width: 50px
-		height: 50px
-		text-align: center
-		background-color: $accent
-		display: flex
-		justify-content: center
-		align-items: center
-		i 
-			color: #fff
-			font-size: 30px
-			line-height: 50px
-			width: 100%
-			height: 100%
-			transition: 0.3s ease font-size
-			cursor: pointer
-		&:hover 
-			i 
-				font-size: 35px
-	&-open
- 		display: none
- 		&.active
- 			display: flex
-	&-close
-		display: none
-		&.active
-			display: flex
 	&-line
 		.logo
 			border-bottom: 1px solid rgba($accent, 0.2)
+.navBurger 
+    position: absolute
+    right: 20px
+    top: 30px
+    cursor: pointer
+    background: $accent
+    z-index: 6
+    box-sizing: border-box
+    background-clip: content-box
+    width: 35px
+    height: 25px
+    border-top: 11px solid transparent
+    border-bottom: 11px solid transparent
+    transform: rotate(0deg)
+    transition: all 0.25s ease-in-out
+    display: none
+    &:before,
+    &:after 
+        content: ""
+        position: absolute
+        background: $accent
+        height: 3px
+        width: 100%
+        right: 0
+        will-change: rotate
+        transform: rotate(0deg)
+        transition: all 0.5s ease
+    &:before 
+        top: -10px
+    &:after 
+        bottom: -10px
+        width: 100%
+    &.active 
+        background: transparent
+        background-clip: content-box
+    &.active:before
+        transform: rotate(135deg)
+        top: 0
+        background: $accent
+        width: 110%
+    &.active:after 
+        bottom: 0
+        transform: rotate(-135deg)
+        background: $accent
+        width: 110%
 
 //Extra large: ≥1200px
 +media-breakpoint-down(xl)
 
 //Large: ≥992px
 +media-breakpoint-down(lg)
-
+	.navBurger
+		display: block
 //Medium: ≥768px
 +media-breakpoint-down(md)
-
+	
 //Small: ≥576px
 +media-breakpoint-down(sm)
-	header 
+	.header
 		padding-top: 15px
 		padding-left: 15px
-	.header
-		&-open,
-		&-close
-			top: 21px
-			right: 15px
-
+	
 //Extra small: >0
 +media-breakpoint-down(xs)
 	header 
