@@ -10,7 +10,8 @@ let paths = {
 
 	scripts: {
 		src: [
-			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			baseDir + '/libs/js/_slick.min.js',
 			baseDir + '/js/filter.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
@@ -67,7 +68,7 @@ function browsersync() {
 function scripts() {
 	return src(paths.scripts.src)
 	.pipe(concat(paths.jsOutputName))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(dest(paths.scripts.dest))
 	.pipe(browserSync.stream())
 }

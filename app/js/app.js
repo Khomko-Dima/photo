@@ -27,4 +27,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	})
 
+
+	$('.review-list').slick({
+	  centerMode: true,
+	  centerPadding: '60px',
+	  slidesToShow: 3,
+	  focusOnSelect: true,
+	  dots: true,
+	  arrows: true,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        centerPadding: '40px',
+	        slidesToShow: 2
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 1
+	      }
+	    }
+	  ]
+	});
+	
+
 });

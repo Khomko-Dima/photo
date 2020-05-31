@@ -23,45 +23,76 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const wishlist = [];
 
+    const loading = () => {
+		const spiner = `<div class="preloader" id="preloader">
+		                    <div class="item">
+			                    <div class="spinner"></div>
+		                    </div>
+	                    </div>`;
+        imgWrapper.innerHTML = spiner;
+	};
 
-    const getImg = (handler, filter) => {
-        // loading(handler.name);
-        fetch('base.json')
-            .then(response => response.json())
-            .then(filter)
-            .then(handler);
+    const obj = {
+        "async": true,
+        "crossDomain": true,
+        "method": "GET",
+        "headers": {
+			"content-type": "application/json",
+			"x-apikey": "5ed376082032862ff2ce26ed",
+			"cache-control": "no-cache"
+        }
     };
 
+    const getResuorse = async(url, opt) => {
+        const res = await axios(`${url}`, opt);
+        if(res.status !== 200) {
+            throw new Error(`Colud not fetch ${url}, status: ${res.status}`);
+        };
+        return res;
+    }
+
+
+    const getImg = (handler, filter) => {
+        loading();
+        getResuorse('https://filter-cc17.restdb.io/rest/photos', obj)
+            .then(data => filter(data.data))
+            .then(data => handler(data))
+    };
+
+    
     // Генерация карточек
-	const createCard = (id, category, location, typeLocation, season, title, img) => {
+	const createCard = (category, img, location, season, typeLocation, _id) => {
         const card = document.createElement('div');
         
         let tagsList = [];
         const tags = [category, location, typeLocation, season];
+        console.log('tags: ', tags);
         
         tags.forEach((elem, i) => {
+            console.log(elem);
             let listElement = '';
             elem.forEach((el, i, arr) => {
                 listElement += `${el}${i+1 == arr.length ? '' : ', '}`;
             });
             tagsList[i] = listElement;
         });
+        const link = 'https://filter-cc17.restdb.io/media/';
 
-		card.className = 'card-wrapper col-12 col-md-6 col-lg-4 col-xl-3 pb-3';
+		card.className = 'card-wrapper col-12 col-md-6 col-lg-4';
         card.innerHTML = `
                         <div class="card">
-                            <div class="card-img-wrapper">
-                                <img class="card-img-top" src="${img}" alt="${title}">
-                                <button 
-                                    class="card-add-wishlist ${wishlist.includes(id) ? 'active' : ''}"
-                                    data-img-id="${id}"
-                                    >&#10084;
-                                </button>
+                            <div class="card-img">
+                                <img class="img-responsive" src="${link + img}" >
+                                <div 
+                                    class="card-wishlist ${wishlist.includes(_id) ? 'active' : ''}"
+                                    data-img-id="${_id}"></div>
                             </div>
+                            <div class="card-desc">
                             ${tagsList[0] ? `<span>Категории: ${tagsList[0]}</span><br>` : ''}
                             ${tagsList[1] ? `<span>Локация: ${tagsList[1]}</span><br>` : ''}
                             ${tagsList[2] ? `<span>Тип локация: ${tagsList[2]}</span><br>` : ''}
                             ${tagsList[3] ? `<span>Сезон: ${tagsList[3]}</span>` : ''}
+                            </div>                            
                         </div>`;
 		return card;
     };
@@ -70,20 +101,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	const renderCard = (items) =>{
 		imgWrapper.textContent = '';
 		if (items.length) {
-			items.forEach(({ id, category, location, typeLocation, season, title, img }) => {
-				imgWrapper.appendChild(createCard(id, category, location, typeLocation, season, title, img));
+            console.log(items);
+			items.forEach(({ category, img, location, season, typeLocation, _id }) => {
+				imgWrapper.appendChild(createCard(category, img, location, season, typeLocation, _id));
 			})
 		} else {
 			imgWrapper.textContent = 'Извените мы не нашли изображение по вашему запросу';
 		}	
     };
+
     
     //работа с хранилищем
     const storageQuery = (get) => {
 		if (get) {
 			if (localStorage.getItem('whishlist')) {
 				wishlist.push(...JSON.parse(localStorage.getItem('whishlist')));
-				// JSON.parse(localStorage.getItem('whishlist')).forEach(id => wishlist.push(id));
 			}
 		} else {
 			localStorage.setItem('whishlist', JSON.stringify(wishlist));
@@ -97,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const elementsList = [...(categoryList.getElementsByTagName('a'))];
         resetStyle(elementsList, target)
 
-		getImg(renderCard, img => img.filter(item => wishlist.includes(item.id)));
+		getImg(renderCard, img => img.filter(item => wishlist.includes(item._id)));
 	};
     
     //рендеры списков
@@ -225,16 +257,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const handlerBasket = (e) => {
-		const target = e.target;
-		if (target.classList.contains('card-add-wishlist')) {
+        const target = e.target;
+        console.log(target);
+		if (target.classList.contains('card-wishlist')) {
 			toogleWhishList(target.dataset.imgId, target);
 		}
-		if (target.classList.contains('goods-delete')) {
-			removeGoods(target.dataset.goodsId);
-        }
 	};
 
-    
     
     //иницилизация
     storageQuery(true);
@@ -243,6 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
     typeLocationList.addEventListener('click', choiceTypeLocationList);
     seasonList.addEventListener('click', choiceSeasonList);
     wishlistBtn.addEventListener('click', showWishlist);
-    imgWrapper.addEventListener('click', handlerBasket)
+    imgWrapper.addEventListener('click', handlerBasket);
 
+    
 });
