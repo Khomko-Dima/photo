@@ -1,0 +1,54 @@
+.dropdown
+	list-style: none
+	width: 100% 
+	background: #f9f9f9
+	color: #000
+	overflow-x: hidden
+	position: absolute
+	z-index: 2
+	padding: 0
+	margin: 0
+	display: none
+	li
+		display: flex
+		justify-content: space-between
+		padding: 5px 15px
+		cursor: pointer
+		&:hover
+			color: #d84d00
+	&.active
+		display: block
+.chose-mask
+	position: absolute
+	cursor: pointer
+	z-index: 2
+	top: 24px
+	left: 0
+	height: 50px
+	width: 40px
+	display: flex
+	justify-content: center
+	align-items: center
+	border-bottom-left-radius: 5px
+	border-top-left-radius: 5px
+	transition: 0.3s ease all
+	&:hover 
+		background-color: $accent
+	.flag
+		width: 20px
+		height: 16px
+		background-image: url(../images/flags.png)
+		background-repeat: no-repeat
+	.by 
+		background-position: -790px 3px
+	.ru 
+		background-position: -4295px 0
+	.ua 
+		background-position: -5175px 0
+	.iti-arrow 
+		margin-left: 5px
+		width: 0
+		height: 0
+		border-left: 3px solid transparent
+		border-right: 3px solid transparent
+		border-top: 4px solid #555

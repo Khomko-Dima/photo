@@ -1,12 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
 
-	// Custom JS
 	const navBurger = document.querySelector('.navBurger');
 	const menu = document.querySelector('.menu');
 
 	navBurger.addEventListener('click', (e) => {
 		const target = e.target;
-		console.log(target);
 		if (target.classList.contains('active')) {
 			target.classList.remove('active');
 			menu.classList.remove('active');
@@ -15,75 +12,92 @@ document.addEventListener("DOMContentLoaded", function() {
 			menu.classList.add('active');
 		}
 		
-	})
-
-	//tabs
-    let tab = document.querySelectorAll('.info-header-tab'),
-        info = document.querySelector('.info-header'),
-        tabContent = document.querySelectorAll('.info-tabcontent');
-
-    function hideTabContent(a) {
-        for (let i = a; i < tabContent.length; i++) {
-            tabContent[i].classList.remove('show');
-            tabContent[i].classList.add('hide');
-		}
-		for (let i = a; i < tab.length; i++) {
-            tab[i].classList.remove('active');
-        }
-    }
-
-    hideTabContent(1);
-
-    function showTabContent(b, target) {
-        if (tabContent[b].classList.contains('hide')) {
-            tabContent[b].classList.remove('hide');
-            tabContent[b].classList.add('show');
-		}
-		for (let i = b; i < tab.length; i++) {
-            tab[b].classList.add('active');
-        }
-		if (target && target.classList.contains('review-show')) {
-			$('.review-list').slick({
-				centerMode: true,
-				centerPadding: '60px',
-				slidesToShow: 3,
-				focusOnSelect: true,
-				dots: true,
-				arrows: true,
-				responsive: [
-					{
-					breakpoint: 768,
-					settings: {
-						centerPadding: '40px',
-						slidesToShow: 2
-					}
-					},
-					{
-					breakpoint: 480,
-					settings: {
-						centerMode: true,
-						centerPadding: '40px',
-						slidesToShow: 1
-					}
-					}
-				]
-			});
-		}
-		
-    }
-
-    info.addEventListener('click', function(event) {
-		event.preventDefault();
-        let target = event.target;
-        if (target && target.classList.contains('info-header-tab')) {
-            for(let i = 0; i < tab.length; i++) {
-                if (target == tab[i]) {
-                    hideTabContent(0);
-                    showTabContent(i, target);
-                    break;
-                }
-			}
-		}
 	});
+	function remuvStyle()  {
+		if(navBurger.classList.contains('active') && menu.classList.contains('active')) {
+			menu.classList.remove('active');
+			navBurger.classList.remove('active');
+		}
+	};
+
+	//flag
+	const maskPhoneBy = () => {
+        $("input[name=phone]").mask("+375(99)999-99-99");
+    };
+    const maskPhoneRu = () => {
+        $("input[name=phone]").mask("+7(999)999-9999");
+    };
+    const maskPhoneUa = () => {
+        $("input[name=phone]").mask("+380(999)999-9999");
+    };
+    maskPhoneBy();
+
+	const flag = document.querySelectorAll('.chose-mask');
+	const flagCountry = document.querySelectorAll('.flag');
+	const dropdown = document.querySelectorAll('.dropdown');
+
+	const swapFlag = (reg) => {
+		flagCountry.forEach(el => {
+			el.classList.add(`${reg}`)
+		})
+	};
+
+	flag.forEach((el, i) => {
+		el.addEventListener('click', (e) => {
+			const target = e.target;
+			if (dropdown[i].classList.contains('active')){
+				dropdown[i].classList.remove('active');
+			} else dropdown[i].classList.add('active');
+		})
+	})
+	
+	dropdown.forEach((el, i) => {
+		el.addEventListener('click', (e) => {
+			const target = e.target.dataset.country;
+			flagCountry[i].className = 'flag';
+			if (target == 'by') {
+				swapFlag('by');
+				el.classList.remove('active');
+				maskPhoneBy();
+			}
+			if (target == 'ru') {
+				swapFlag('ru');
+				el.classList.remove('active');
+				maskPhoneRu();
+			}
+			if (target == 'ua') {
+				swapFlag('ua');
+				el.classList.remove('active');
+				maskPhoneUa();
+			}
+		})
+	});
+
+	$(document.body).ready(function() {
+		$(".preloader").fadeOut("slow");
+	});
+
+	const form = document.querySelectorAll('form');
+
+	function submitForm (e, form) {
+		e.preventDefault();
+		const formData = new FormData(form);
+
+		console.log('data: ', formData);
+		axios({
+			method: 'post',
+			url: '/submit.php',
+			data: formData,
+			headers: {"content-type": "multipart/form-data"}
+		})
+		.then(data => console.log(data.data))
+	}
+
+
+	form.forEach(el => el.addEventListener('submit', (e) => {
+		submitForm(e, el);
+	}));
+
+
 	
 });

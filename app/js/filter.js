@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
 
-    "use strict";
 
     const 
         wishlistBtn =document.getElementById('wishlist'),
@@ -19,45 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     let categoryChose, locationChose, typeLocationChose, seasonChose = null;
-
-
     const wishlist = [];
-
-    const loading = () => {
-		const spiner = `<div class="preloader" id="preloader">
-		                    <div class="item">
-			                    <div class="spinner"></div>
-		                    </div>
-	                    </div>`;
-        imgWrapper.innerHTML = spiner;
-	};
-
-    const obj = {
-        "async": true,
-        "crossDomain": true,
-        "method": "GET",
-        "headers": {
-			"content-type": "application/json",
-			"x-apikey": "5ed376082032862ff2ce26ed",
-			"cache-control": "no-cache"
-        }
-    };
-
-    const getResuorse = async(url, opt) => {
-        const res = await axios(`${url}`, opt);
-        if(res.status !== 200) {
-            throw new Error(`Colud not fetch ${url}, status: ${res.status}`);
-        };
-        return res;
-    }
-
-
-    const getImg = (handler, filter) => {
-        loading();
-        getResuorse('https://filter-cc17.restdb.io/rest/photos', obj)
-            .then(data => filter(data.data))
-            .then(data => handler(data))
-    };
 
     
     // Генерация карточек
@@ -66,10 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
         let tagsList = [];
         const tags = [category, location, typeLocation, season];
-        console.log('tags: ', tags);
         
         tags.forEach((elem, i) => {
-            console.log(elem);
             let listElement = '';
             elem.forEach((el, i, arr) => {
                 listElement += `${el}${i+1 == arr.length ? '' : ', '}`;
@@ -101,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	const renderCard = (items) =>{
 		imgWrapper.textContent = '';
 		if (items.length) {
-            console.log(items);
 			items.forEach(({ category, img, location, season, typeLocation, _id }) => {
 				imgWrapper.appendChild(createCard(category, img, location, season, typeLocation, _id));
 			})
@@ -110,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		}	
     };
 
-    
     //работа с хранилищем
     const storageQuery = (get) => {
 		if (get) {
@@ -258,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const handlerBasket = (e) => {
         const target = e.target;
-        console.log(target);
 		if (target.classList.contains('card-wishlist')) {
 			toogleWhishList(target.dataset.imgId, target);
 		}
@@ -279,5 +234,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
 
-    
-});
