@@ -221,7 +221,7 @@
 
     
     //иницилизация
-    try{
+    
         storageQuery(true);
         categoryList.addEventListener('click', choiceCategory);
         locationList.addEventListener('click', choiceLocationList);
@@ -229,8 +229,6 @@
         seasonList.addEventListener('click', choiceSeasonList);
         wishlistBtn.addEventListener('click', showWishlist);
         imgWrapper.addEventListener('click', handlerBasket);
-    } catch(e) {
-        console.log(e);
-    }
+    
     
 

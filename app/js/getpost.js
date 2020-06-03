@@ -21,6 +21,11 @@
 		post.className = '${_id}';
         post.innerHTML = `<div class="container">
                             <div class="row">
+                                <div class="col-3">
+                                    <a href="/" class="button button-black"><i class="far fa-arrow-alt-circle-left"></i> Назад</a>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-12">
                                     <h3 class="post-title">${name}</h3>
                                     <span class="post-description">${content}</span>

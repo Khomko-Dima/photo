@@ -77,13 +77,23 @@
 		$(".preloader").fadeOut("slow");
 	});
 
+	$(window).scroll(function() { 
+		if($(this).scrollTop() != 0) {
+			$('#toTop').fadeIn();
+		}  
+		else {
+			$('#toTop').fadeOut();
+		}
+		});
+	$('#toTop').click(function() {
+		$('body,html').animate({scrollTop:0},800);
+	});
+
 	const form = document.querySelectorAll('form');
 
 	function submitForm (e, form) {
 		e.preventDefault();
 		const formData = new FormData(form);
-
-		console.log('data: ', formData);
 		axios({
 			method: 'post',
 			url: '/submit.php',

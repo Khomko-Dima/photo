@@ -8,11 +8,14 @@ const tab = document.querySelectorAll('.info-header-tab'),
 
 function hideTabContent(a) {
     for (let i = a; i < tabContent.length; i++) {
-        tabContent[i].classList.remove('show');
+        tabContent[i].classList.remove('open');
         tabContent[i].classList.add('hide');
     }
+    
     for (let i = a; i < tab.length; i++) {
-        tab[i].offsetParent.classList.remove('active');
+        if(tab[i].offsetParent){
+            tab[i].offsetParent.classList.remove('active');
+        }
     }
     
 };
@@ -22,7 +25,7 @@ hideTabContent(1);
 function showTabContent(b, target) {
     if (tabContent[b].classList.contains('hide')) {
         tabContent[b].classList.remove('hide');
-        tabContent[b].classList.add('show');
+        tabContent[b].classList.add('open');
     }
     tab[b].offsetParent.classList.add('active');
     remuvStyle();
