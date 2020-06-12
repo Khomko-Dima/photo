@@ -18,7 +18,7 @@
             imageList += image;
         })
         
-		post.className = '${_id}';
+		post.className = `${_id}`;
         post.innerHTML = `<div class="container">
                             <div class="row">
                                 <div class="col-3">
@@ -47,13 +47,15 @@
 		sectionPost.textContent = '';
 		if (items.length) {
 			items.forEach(({ name, content, images, _id }) => {
-				sectionPost.appendChild(createPost(name, content, images, _id));
+                sectionPost.appendChild(createPost(name, content, images, _id));
             })
             $('.post-images').lightGallery({
-                thumbnail:true
+                thumbnail:true,
+                download:false,
+                share:false
             }); 
 		} else {
-			sectionPost.textContent = 'Извените мы не нашли изображение по вашему запросу';
+			sectionPost.textContent = 'Извините мы не нашли изображение по вашему запросу';
 		}	
     };
 

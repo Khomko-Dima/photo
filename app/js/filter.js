@@ -83,7 +83,7 @@
         const target = e.target;
         hideOllList([location, typeLocation, season]);
         const elementsList = [...(categoryList.getElementsByTagName('a'))];
-        resetStyle(elementsList, target)
+        resetStyle(elementsList)
 
 		getImg(renderCard, img => img.filter(item => wishlist.includes(item._id)));
 	};

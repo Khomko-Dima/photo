@@ -45,6 +45,8 @@
 				&:before,
 				&:after
 					width: 50%
+			&.hiden-pk
+				display: none
 
 
 //Large: ≥992px
@@ -67,6 +69,7 @@
 		ul 
 			flex-direction: column
 			margin-top: 50px
+			position: relative
 			li 
 				border-bottom: 1px solid rgba(76, 76, 76, 0.2)
 				width: 100%
@@ -78,7 +81,10 @@
 					padding-top: 15px
 					padding-bottom: 15px
 					color: $textcolor
+				&.hiden-pk
+					display: block
 		&.active
 			display: block
 			text-align: center
 			top: 0
+			height: 100%

@@ -12,7 +12,7 @@
 			margin-bottom: 20px
 	&-card
 		width: 100%
-		min-height: 550px
+		min-height: 560px
 		position: relative
 		perspective: 1000px
 		// overflow: hidden
@@ -32,6 +32,7 @@
 			box-shadow: 0 0 43px rgba(0, 0, 0, 0.08)
 			overflow: hidden
 		.front
+			background-color: #fff
 			&-img
 				width: 100%
 				img 
@@ -42,6 +43,8 @@
 				font-weight: 500
 				line-height: 38px
 				margin-top: 10px
+				padding-left: 10px
+				padding-right: 10px
 			&-cost 
 				font-size: 25px
 			&-button
@@ -79,7 +82,7 @@
 				font-size: 20px
 @media (max-width: 360px)
 	.price-card
-		min-height: 420px
+		min-height: 445px
 		.front
 			&-img
 				margin-top: 0

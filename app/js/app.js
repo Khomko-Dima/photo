@@ -7,9 +7,12 @@
 		if (target.classList.contains('active')) {
 			target.classList.remove('active');
 			menu.classList.remove('active');
+			html.classList.remove('modal-is-locked');
 		} else {
 			target.classList.add('active');
 			menu.classList.add('active');
+			html.classList.add('modal-is-locked');
+			
 		}
 		
 	});
@@ -94,6 +97,7 @@
 	function submitForm (e, form) {
 		e.preventDefault();
 		const formData = new FormData(form);
+		console.log('formData: ', formData);
 		axios({
 			method: 'post',
 			url: '/submit.php',
@@ -107,6 +111,13 @@
 	form.forEach(el => el.addEventListener('submit', (e) => {
 		submitForm(e, el);
 	}));
+
+	const options = {
+		strings: ['Беларусь', 'Украина', 'Россия', 'Беларусь'],
+		typeSpeed: 100
+	  };
+	  
+	const typed = new Typed('.typewrite-text', options);
 
 
 	

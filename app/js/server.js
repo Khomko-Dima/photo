@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (nameFunc == 'renderPost') {
             sectionPost.innerHTML = spiner;
-        }
-        
+        } 
     };
     
     const objPhotos = {
@@ -26,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const getResuorse = async(url, opt) => {
         const res = await axios(`${url}`, opt);
+
         if(res.status !== 200) {
             throw new Error(`Colud not fetch ${url}, status: ${res.status}`);
         };

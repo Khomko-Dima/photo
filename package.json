@@ -28,6 +28,7 @@
 		"jquery": "^3.5.1"
 	},
 	"dependencies": {
-		"gulp-babel": "^8.0.0"
+		"gulp-babel": "^8.0.0",
+		"typed.js": "^2.0.11"
 	}
 }

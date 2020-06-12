@@ -1,6 +1,6 @@
 const 
             html = document.querySelector('html'),
-            overlay = document.querySelector('.modal-overlay'), //оврелей фона
+            overlay = document.querySelector('.modal-overlay'), //оверлей фона
             modalMass = [...(document.querySelectorAll('.modal'))], //все модальные окна
             open_modal = document.querySelectorAll('.open_modal'); //все кнопки вызова модального окна
     let modal = null;
@@ -53,7 +53,9 @@ const
                                     ${opt.listImg}
                                     </div>`;
         $('.modal-galery__list').lightGallery({
-            thumbnail:true
+            thumbnail:true,
+            download:false,
+            share:false
         });
         const modalGalery = modalContent.querySelector('.modal-galery__list');
         const openImg = (e) => {

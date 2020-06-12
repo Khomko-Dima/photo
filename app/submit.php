@@ -1,11 +1,13 @@
 <?php 
 
-if (!empty($_POST['phone']) || !empty($_POST['email'])){
+  if (!empty($_POST['phone']) || !empty($_POST['email'])){
 
 
-    $mailto = 'khomko.dima.jobs@gmail.com';
+    $mailto = 'ph.pravdik@gmail.com';
     $name = htmlspecialchars(trim($_POST['name']));
     $phone = htmlspecialchars(trim($_POST['phone']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
     $valToSend = htmlspecialchars(trim($_POST['valToSend']));
     $form = $_POST['metrika'];
@@ -25,18 +27,21 @@ if (!empty($_POST['phone']) || !empty($_POST['email'])){
     if($phone){
        $msg.=  "Телефон: $phone \r\n\n";
     }
+    if($email){
+       $msg.=  "Email: $email \r\n\n";
+    }
+    if($message){
+       $msg.=  "Сообщение: $message \r\n\n";
+    }
 
-  if (mail($mailto, $subject, $msg, $headers)){
-
-
-   echo "1";
+    if (mail($mailto, $subject, $msg, $headers)){
+      echo "1";
+    } else {
+      echo "3";
+    }
 
   } else {
-    echo "3";
+      echo "2";
   }
-
-} else {
-  echo "2";
-}
 
 ?>
