@@ -20,6 +20,7 @@
 		if(navBurger.classList.contains('active') && menu.classList.contains('active')) {
 			menu.classList.remove('active');
 			navBurger.classList.remove('active');
+			html.classList.remove('modal-is-locked');
 		}
 	};
 
@@ -105,6 +106,7 @@
 			headers: {"content-type": "multipart/form-data"}
 		})
 		.then(data => console.log(data.data))
+		form.reset();
 	}
 
 
@@ -113,7 +115,7 @@
 	}));
 
 	const options = {
-		strings: ['Беларусь', 'Украина', 'Россия', 'Беларусь'],
+		strings: ['Беларусь', 'Минск', 'Украина', 'Тростянец', 'Россия', 'Москва', 'Беларусь'],
 		typeSpeed: 100
 	  };
 	  

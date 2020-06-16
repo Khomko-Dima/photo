@@ -44,7 +44,7 @@
 
     // рендер поста
     const renderPost = (items) =>{
-		sectionPost.textContent = '';
+        sectionPost.textContent = '';
 		if (items.length) {
 			items.forEach(({ name, content, images, _id }) => {
                 sectionPost.appendChild(createPost(name, content, images, _id));
@@ -55,7 +55,7 @@
                 share:false
             }); 
 		} else {
-			sectionPost.textContent = 'Извините мы не нашли изображение по вашему запросу';
+			sectionPost.textContent = 'Извините, мы не нашли изображение по вашему запросу :(';
 		}	
     };
 
@@ -65,7 +65,7 @@
 
             hideTabContent(0);
             sectionPost.classList.add('active');
-            getPosts(renderPost, (img) => img.filter((item) => item.name.includes(target.dataset.name)));
+            getPosts(renderPost, (data) => data.filter((item) => item.name.includes(target.dataset.name)));
             
         }
     })

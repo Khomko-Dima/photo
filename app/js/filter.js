@@ -101,6 +101,7 @@
     const hideOllList = (lists) => {
         lists.forEach(el => {
             const elementsList = [...(el.getElementsByTagName('a'))];
+
             resetStyle(elementsList)
             if (el.classList.contains('active')) {
                 el.classList.remove('active');
