@@ -124,7 +124,7 @@
 					<div class="col-lg-4 col-md-3 col-sm-6 col-8">
 						<div class="portfolio-container__item">
 							<a class="linkPost" data-name="Оля и Слава">
-								<img class="img-responsive" src="images/dest/main/3.JPG" alt="">
+								<img class="img-responsive" src="images/dest/main/3.jpg" alt="">
 								<div class="info_item">
 									<h3 class="title">Оля и Слава</h3>
 								</div>
@@ -545,6 +545,7 @@
 					</div>
 					<div class="col-lg-2 order-lg-2 order-1">
 						<div id="wishlist"><i class="fas fa-heart"></i> Избранное</div>
+						<div id="clear-wishlist"><i class="fas fa-heart-broken"></i> Очистить избранное</div>
 					</div>
 					<div class="col-lg-3 order-3">
 						<div class="location shoy">
@@ -797,7 +798,13 @@
 		</div>
 	</div>
 </footer>
-
+<button  
+	id="button_senks" 
+	class="open_modal" 
+	data-action="senks"
+	style="display: none" 
+	>Click For Modal
+</button>
 <div class="modal-overlay">
     <div class="modal" data-target="first">
     	<a class="close-modal">✖</a><!-- close modal -->
@@ -854,6 +861,13 @@
     <div class="modal modal-galery" data-target="galery">
         <a class="close-modal">✖</a><!-- close modal -->
         <div class="modal-content">
+        </div><!-- content -->
+    </div><!-- modal -->
+
+    <div class="modal modal_senks" data-target="senks">
+        <a class="close-modal">✖</a><!-- close modal -->
+        <div class="modal-content">
+        	<strong class="modal_senks">Собщение отправлено :)</strong>
         </div><!-- content -->
     </div><!-- modal -->
                     

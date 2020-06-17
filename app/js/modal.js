@@ -83,6 +83,8 @@ const
         if (dataAction === 'galery') {
             createGalery(target);
         }
+        if (dataAction === 'senks') {
+        }
         overlay.addEventListener('click', closeModal);
     };
 

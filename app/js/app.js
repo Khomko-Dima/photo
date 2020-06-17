@@ -98,7 +98,6 @@
 	function submitForm (e, form) {
 		e.preventDefault();
 		const formData = new FormData(form);
-		console.log('formData: ', formData);
 		axios({
 			method: 'post',
 			url: '/submit.php',
@@ -107,6 +106,8 @@
 		})
 		.then(data => console.log(data.data))
 		form.reset();
+		modalStatusFunc();
+		$('#button_senks').click();
 	}
 
 

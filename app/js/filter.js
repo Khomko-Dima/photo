@@ -2,6 +2,7 @@
 
     const 
         wishlistBtn =document.getElementById('wishlist'),
+        wishlistClearBtn =document.getElementById('clear-wishlist'),
 
         categoryList = document.querySelector('.category-list'),
         imgWrapper = document.querySelector('.img-wrapper'),
@@ -83,7 +84,11 @@
         const target = e.target;
         hideOllList([location, typeLocation, season]);
         const elementsList = [...(categoryList.getElementsByTagName('a'))];
-        resetStyle(elementsList)
+        resetStyle(elementsList);
+
+        if(wishlist.length) {
+            wishlistClearBtn.classList.add('active');
+        }
 
 		getImg(renderCard, img => img.filter(item => wishlist.includes(item._id)));
 	};
@@ -218,7 +223,19 @@
 		if (target.classList.contains('card-wishlist')) {
 			toogleWhishList(target.dataset.imgId, target);
 		}
-	};
+    };
+    
+    const clearStoranje = (e) => {
+        const target = e.target;
+        imgWrapper.textContent = 'Изображения удалены';
+        hideOllList([location, typeLocation, season]);
+        wishlist.splice(0, wishlist.length);
+        localStorage.removeItem('whishlist');
+        storageQuery(true);
+        if(wishlistClearBtn.classList.contains('active')) {
+            wishlistClearBtn.classList.remove('active');
+        }
+    }
 
     
     //иницилизация
@@ -230,6 +247,7 @@
         seasonList.addEventListener('click', choiceSeasonList);
         wishlistBtn.addEventListener('click', showWishlist);
         imgWrapper.addEventListener('click', handlerBasket);
+        wishlistClearBtn.addEventListener('click', clearStoranje);
     
     
 
